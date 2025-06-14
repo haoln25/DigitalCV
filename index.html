@@ -2,43 +2,121 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex - Digital CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Le Nhat Hao</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/style.css" class="">
 </head>
 
 <body>
     <header>
-        <h1>Alex</h1>
+        <h1>Le Nhat Hao</h1>
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Education</a></li>
-                <li><a href="#">Experience</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certs">Certificates</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-img">
-            <img src="https://i.imgur.com/bR88VNo.png" alt="Alex Avatar" />
-        </div>
-        <div class="hero-text">
-            <h2>Hi, It's <span>Alex</span><br>I'm a <span>Developer</span></h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore dolores esse. Odit similique
-                doloribus tenetur doloremque.</p>
+    <section class="home">
+        <div class="home-img"><img src="./image/avt.jpg" alt="Avatar"></div>
+        <div class="home-text">
+            <h2>Hi, I'm <span>Le Nhat Hao</span></h2>
+            <p>Aspiring front-end developer passionate about creating intuitive user experiences.</p>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-x-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-github"></i></a>
+                <a href=""><i class="fab fa-linkedin"></i></a>
             </div>
-            <a href="#" class="hire-btn">Hire me</a>
+        </div>
+    </section>
+
+    <section id="about" class="section__odd">
+        <h2>Thông tin cá nhân</h2>
+        <div class="grid">
+            <div class="card">
+                <p><strong>Họ tên:</strong> Lê Nhật Hào</p>
+                <p><strong>Ngày sinh:</strong> 15/04/2005</p>
+                <p><strong>Quê quán:</strong> Kiên Giang</p>
+                <p><strong>Email:</strong> lenhathao010181@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="career" class="section">
+        <h2>Mục tiêu nghề nghiệp</h2>
+        <div class="card">
+            <p>Phát triển kỹ năng front-end, tham gia các dự án thực tế, trở thành developer chuyên nghiệp, đóng góp vào
+                các sản phẩm hữu ích cho cộng đồng.</p>
+        </div>
+    </section>
+
+    <section id="hobbies" class="section__odd">
+        <h2>Sở thích</h2>
+        <div class="grid">
+            <div class="card">📚 Đọc sách</div>
+            <div class="card">💻 Lập trình</div>
+            <div class="card">🎮 Chơi game</div>
+            <div class="card">🎧 Nghe nhạc</div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Ngôn ngữ & Kỹ năng</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Ngôn ngữ</h3>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">C++</span>
+                <span class="badge">Python</span>
+            </div>
+            <div class="card">
+                <h3>Kỹ năng</h3>
+                <span class="badge">Responsive Design</span>
+                <span class="badge">React</span>
+                <span class="badge">Figma</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="section__odd">
+        <h2>Chứng chỉ - Giải thưởng</h2>
+        <div class="card">
+            <p>Không có</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Dự án</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Portfolio cá nhân</h3>
+                <p>Trang CV cá nhân có responsive, hiệu ứng cuộn, chia section rõ ràng.</p>
+            </div>
+            <div class="card">
+                <h3>Website bán hoa</h3>
+                <p>Dự án website bán hàng có giỏ hàng, tìm kiếm và đặt hàng giả lập.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section__odd">
+        <h2>Liên hệ</h2>
+        <div class="grid">
+            <div class="card">
+                <p>Email: lenhathao010181@gmail.com</p>
+                <p>Facebook: </p>
+                <p>GitHub: github.com/nhathao</p>
+            </div>
         </div>
     </section>
 </body>
