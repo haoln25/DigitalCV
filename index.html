@@ -16,8 +16,8 @@
         <h1>Le Nhat Hao</h1>
         <nav>
             <ul>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#career">Career</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#certs">Certificates</a></li>
@@ -28,9 +28,9 @@
     </header>
 
     <section class="home">
-        <div class="home-img"><img src="./image/avt.jpg" alt="Avatar"></div>
         <div class="home-text">
-            <h2>Hi, I'm <span>Le Nhat Hao</span></h2>
+            <h3 class="">Hi, I'm <span>Le Nhat Hao</span></h3>
+            <h2>Developer and Cyper Security Programmer</h2>
             <p>Aspiring front-end developer passionate about creating intuitive user experiences.</p>
             <div class="social-icons">
                 <a href=""><i class="fab fa-facebook"></i></a>
@@ -38,37 +38,82 @@
                 <a href=""><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
+        <div class="home-img"><img src="./image/home.png" alt="Avatar"></div>
+
     </section>
 
-    <section id="about" class="section__odd">
-        <h2>Thông tin cá nhân</h2>
-        <div class="grid">
-            <div class="card">
-                <p><strong>Họ tên:</strong> Lê Nhật Hào</p>
-                <p><strong>Ngày sinh:</strong> 15/04/2005</p>
-                <p><strong>Quê quán:</strong> Kiên Giang</p>
-                <p><strong>Email:</strong> lenhathao010181@gmail.com</p>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>Giới Thiệu</h2>
+            <div class="about-flex">
+                <div class="avt-img">
+                    <img src="./image/avt.jpg" alt="Avatar">
+                </div>
+                <div class="about-intro">
+                    <p class="intro">
+                        Xin chào! Mình là <strong>Lê Nhật Hào</strong>, hiện là sinh viên tại Trường Đại học Giao thông
+                        Vận tải TP.HCM (UTH).<br>
+                        Mình là một lập trình viên đầy đam mê với lĩnh vực phát triển web, luôn nỗ lực hoàn thiện kỹ
+                        năng và xây dựng các sản phẩm chất lượng.
+                    </p>
+                    <div id="hobbies" class="hobby-hover">
+                        <h2>Sở thích cá nhân</h2>
+                        <div class="hobby-container">
+                            <div class="hobby-item">
+                                <div class="hobby-tab">Thể thao 🏀</div>
+                                <div class="hobby-box">
+                                    <h4>Các bộ môn yêu thích:</h4>
+                                    <ul>
+                                        <li>Bóng rổ</li>
+                                        <li>Bóng đá</li>
+                                        <li>Bơi lội</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="hobby-item">
+                                <div class="hobby-tab">Chơi game 🎮</div>
+                                <div class="hobby-box">
+                                    <h4>Thể loại yêu thích:</h4>
+                                    <ul>
+                                        <li>FPS</li>
+                                        <li>MOBA</li>
+                                        <li>RPG</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="hobby-item">
+                                <div class="hobby-tab">Nghe nhạc 🎧</div>
+                                <div class="hobby-box">
+                                    <h4>Thể loại nhạc:</h4>
+                                    <ul>
+                                        <li>Lo-fi</li>
+                                        <li>Pop</li>
+                                        <li>Indie</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="hobby-item">
+                                <div class="hobby-tab">Du lịch ✈️</div>
+                                <div class="hobby-box">
+                                    <h4>Điểm đến yêu thích:</h4>
+                                    <ul>
+                                        <li>Đà Lạt</li>
+                                        <li>Phú Quốc</li>
+                                        <li>Vũng Tàu</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </section>
 
-    <section id="career" class="section">
-        <h2>Mục tiêu nghề nghiệp</h2>
-        <div class="card">
-            <p>Phát triển kỹ năng front-end, tham gia các dự án thực tế, trở thành developer chuyên nghiệp, đóng góp vào
-                các sản phẩm hữu ích cho cộng đồng.</p>
-        </div>
-    </section>
-
-    <section id="hobbies" class="section__odd">
-        <h2>Sở thích</h2>
-        <div class="grid">
-            <div class="card">📚 Đọc sách</div>
-            <div class="card">💻 Lập trình</div>
-            <div class="card">🎮 Chơi game</div>
-            <div class="card">🎧 Nghe nhạc</div>
-        </div>
-    </section>
 
     <section id="skills" class="section">
         <h2>Ngôn ngữ & Kỹ năng</h2>
@@ -90,7 +135,7 @@
         </div>
     </section>
 
-    <section id="certs" class="section__odd">
+    <section id="certs" class="section">
         <h2>Chứng chỉ - Giải thưởng</h2>
         <div class="card">
             <p>Không có</p>
@@ -111,7 +156,7 @@
         </div>
     </section>
 
-    <section id="contact" class="section__odd">
+    <section id="contact" class="section">
         <h2>Liên hệ</h2>
         <div class="grid">
             <div class="card">
