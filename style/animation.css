@@ -1,0 +1,234 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade-in*/
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* leaf */
+.leaf-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.leaf {
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+.leaf:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.leaf:nth-child(2) {
+    left: 30%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.leaf:nth-child(3) {
+    left: 50%;
+    animation-duration: 7s;
+    animation-delay: 4s;
+}
+
+.leaf:nth-child(4) {
+    left: 70%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.leaf:nth-child(5) {
+    left: 90%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+/* Animation rơi */
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.leaf {
+    content: '🍃';
+    font-size: 24px;
+    position: absolute;
+    top: -50px;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+/* gõ chữ */
+
+.typewriter-text {
+    white-space: pre-line;
+    border-right: 2px solid #000;
+    overflow: hidden;
+    display: inline-block;
+    min-height: 1.5em;
+}
+
+/* Lắc nhẹ */
+.project-card img,
+.avt-img img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img,
+.avt-img:hover img {
+    transform: scale(1.05);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideLeft 1s ease forwards;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideRight 1s ease forwards;
+}
+
+@keyframes slideLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.social-link:hover i {
+    color: white;
+    transform: rotateY(360deg);
+}
+
+/* --- CỤ THỂ CHO BIỂU TƯỢNG GITHUB --- */
+.social-link-github:hover {
+    border-color: black;
+}
+
+.social-link-github:hover::before {
+    background-color: black;
+}
+
+/* --- CỤ THỂ CHO BIỂU TƯỢNG FACEBOOK --- */
+.social-link-facebook:hover {
+    border-color: #3b5999;
+}
+
+.social-link-facebook:hover::before {
+    background-color: #3b5999;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes float-rotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.home-img img {
+    width: 450px;
+    animation: float-rotate 5s ease-in-out infinite;
+}
+
+.home-img img:hover {
+    transform: scale(1.05) rotate(3deg);
+    transition: transform 0.3s ease;
+}
+
+/* Keyframes cho hiệu ứng zoom in - zoom out */
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+/* Áp dụng hiệu ứng vào mỗi sở thích */
+.hobby-item {
+    animation: zoomInOut 2.5s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+/* Animation khi load thanh kỹ năng */
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--skill-percent);
+    }
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(to right, #5c6bc0, #26c6da);
+    border-radius: 10px 0 0 10px;
+    width: 0;
+    animation: fillBar 2s ease forwards;
+    position: relative;
+}

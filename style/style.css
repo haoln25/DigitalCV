@@ -13,6 +13,19 @@ header {
     padding: 20px 50px;
     background: #0a3b1f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    /* Đảm bảo hiển thị trên mọi thứ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #0a3b1f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
 }
 
 header h1 {
@@ -46,6 +59,8 @@ nav ul li a.active {
     padding: 80px;
     height: 550px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .home-img {
@@ -67,11 +82,11 @@ nav ul li a.active {
 
 .home-text h2 {
     font-size: 50px;
-    color: #0a3b1f;
+    color: #3f51b5;
 }
 
 .home-text h3 span {
-    color: #0a3b1f;
+    color: #000000;
 }
 
 .home-text p {
@@ -80,25 +95,59 @@ nav ul li a.active {
     line-height: 1.6;
 }
 
+
 .social-icons {
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
 }
 
 .social-icons a {
-    margin-right: 15px;
-    color: #0a3b1f;
-    font-size: 20px;
-    padding: 10px 10px;
-    border: 1px solid #0a3b1f;
-    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #646cba;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
     text-decoration: none;
-    transition: 0.3s;
+    transition: border-color 0.3s ease;
 }
 
-.social-icons a:hover {
-    background-color: #0a3b1f;
-    color: white;
-    border-color: #0a3b1f;
+.social-icons a i {
+    font-size: 2rem;
+    color: #646cba;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease, transform 0.6s ease;
+}
+
+.social-icons a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(100, 108, 186, 0.1);
+    z-index: 1;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.social-icons a:hover::before {
+    transform: translateY(0);
+}
+
+
+section {
+    height: 650px;
 }
 
 .about-section {
@@ -212,4 +261,276 @@ nav ul li a.active {
 /* Hiển thị box khi hover */
 .hobby-item:hover .hobby-box {
     display: block;
+}
+
+.skills-section {
+    padding: 80px 40px;
+    background-color: #f0f4ff;
+}
+
+.skills-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #5c6bc0;
+    margin-bottom: 40px;
+}
+
+.skill-category {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.skill-block {
+    flex: 1;
+    min-width: 300px;
+}
+
+.skill-block h3 {
+    color: #5c6bc0;
+    margin-bottom: 10px;
+}
+
+.skill-block p {
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.skill-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: 10px;
+    position: relative;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(to right, #5c6bc0, #26c6da);
+    border-radius: 10px 0 0 10px;
+}
+
+.skill-percent {
+    position: absolute;
+    right: 10px;
+    top: -25px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Project Section */
+.section {
+    padding: 80px 20px;
+    font-size: 24px;
+    color: #0a3b1f;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+
+    gap: 60px;
+    padding-left: 20px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 40%;
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Overlay ban đầu ẩn đi */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 70%);
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    border-radius: 12px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    backdrop-filter: blur(2px);
+    /* Hiệu ứng mờ */
+}
+
+.project-overlay h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.project-overlay p {
+    font-size: 14px;
+    margin: 4px 0;
+    color: #ffffff;
+}
+
+.project-overlay a.github-link {
+    color: #90caf9;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.project-overlay a.github-link:hover {
+    text-decoration: underline;
+}
+
+/* Liên hệ */
+.contact {
+    padding: 80px 20px;
+}
+
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+
+}
+
+.contact h2 {
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #0a3b1f;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9ff;
+    border-radius: 8px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: #646cba;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 1rem;
+}
+
+.contact-item a.contact-link {
+    color: #333;
+    /* Đặt màu chữ giống với text thông thường */
+    text-decoration: none;
+    /* Bỏ gạch chân */
+    transition: color 0.3s ease;
+}
+
+.contact-item a.contact-link:hover {
+    color: #646cba;
+    /* Vẫn đổi màu khi hover để tạo tương tác */
+}
+
+/* Social Links Container */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    perspective: 1000px;
+}
+
+/* Biểu tượng phương tiện truyền thông xã hội (BASE STYLES) */
+.social-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #646cba;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Icon bên trong nút (BASE STYLES) */
+.social-link i {
+    font-size: 2rem;
+    color: #646cba;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease, transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+/* Pseudo-element ::before (BASE STYLES) - Màu nền trượt lên */
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+}
+
+/* HIỆU ỨNG CHUNG KHI DI CHUỘT (HOVER) */
+.social-link:hover::before {
+    transform: translateY(0);
+}
+
+
+/* Footer */
+footer {
+    background: #646cba;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
 }

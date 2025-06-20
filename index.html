@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css" class="">
+    <link rel="stylesheet" href="./style/animation.css" class="">
 </head>
 
 <body>
@@ -18,19 +19,17 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#certs">Certificates</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="home">
+    <section class="home fade-in-up">
         <div class="home-text">
             <h3 class="">Hi, I'm <span>Le Nhat Hao</span></h3>
-            <h2>Developer and Cyper Security Programmer</h2>
+            <h2 class="typewriter-text" data-text="Developer and Cyber Security Programmer"></h2>
             <p>Aspiring front-end developer passionate about creating intuitive user experiences.</p>
             <div class="social-icons">
                 <a href=""><i class="fab fa-facebook"></i></a>
@@ -39,10 +38,21 @@
             </div>
         </div>
         <div class="home-img"><img src="./image/home.png" alt="Avatar"></div>
-
+        <div class="leaf-container">
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+            <div class="leaf">🍃</div>
+        </div>
     </section>
 
-    <section id="about" class="about-section">
+    <section id="about" class="about-section fade-in-up slide-in-left">
         <div class="about-container">
             <h2>Giới Thiệu</h2>
             <div class="about-flex">
@@ -114,57 +124,149 @@
     </section>
 
 
-    <section id="skills" class="section">
-        <h2>Ngôn ngữ & Kỹ năng</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Ngôn ngữ</h3>
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-                <span class="badge">JavaScript</span>
-                <span class="badge">C++</span>
-                <span class="badge">Python</span>
+    <section class="skills-section fade-in-up" id="skills">
+        <h2 class="skills-title">Kỹ năng & Ngôn ngữ</h2>
+        <div class="skill-category">
+            <div class="skill-block">
+                <h3>✨ Kỹ năng & Định hướng</h3>
+                <p>Tôi sở hữu các kỹ năng mềm quan trọng và đang tích cực học hỏi để phát triển chuyên môn trong lĩnh
+                    vực công nghệ.</p>
+
+                <div class="skill-name">Khả năng tự học</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--skill-percent: 89%;"></div>
+                    <span class="skill-percent">89%</span>
+                </div>
+
+                <div class="skill-name">Giải quyết vấn đề</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--skill-percent: 82%;"></div>
+                    <span class="skill-percent">82%</span>
+                </div>
+
+                <div class="skill-name">Frontend Development</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--skill-percent: 75%;"></div>
+                    <span class="skill-percent">75%</span>
+                </div>
+
+                <div class="skill-name">Backend Development</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--skill-percent: 60%;"></div>
+                    <span class="skill-percent">60%</span>
+                </div>
             </div>
-            <div class="card">
-                <h3>Kỹ năng</h3>
-                <span class="badge">Responsive Design</span>
-                <span class="badge">React</span>
-                <span class="badge">Figma</span>
+
+            <div class="skill-block">
+                <h3>🌐 Ngôn ngữ</h3>
+
+                <div class="skill-name">Tiếng Việt</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--skill-percent: 100%;"></div>
+                    <span class="skill-percent">100%</span>
+                </div>
+
+                <div class="skill-name">Tiếng Anh</div>
+                <div class="skill-bar">
+                    <div class="skill-fill" style="--skill-percent: 60%;"></div>
+                    <span class="skill-percent">60%</span>
+                </div>
+                <div class="">
+                    <h2>Chứng chỉ - Giải thưởng</h2>
+                    <div class="card">
+                        <p>🏆Không có</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="certs" class="section">
-        <h2>Chứng chỉ - Giải thưởng</h2>
-        <div class="card">
-            <p>Không có</p>
+    <section id="projects" class="section featured-projects fade-in-up">
+        <h2 class="section-title">Dự án nổi bật</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="./image/Web.png" alt="Flower Exchange Website">
+                </div>
+                <div class="project-overlay">
+                    <h3>Flower Exchange Website</h3>
+                    <p>Xây dựng trang web thanh lý hoa hoàn chỉnh. Tích hợp thanh toán online, quản lý kho hàng và hệ
+                        thống đánh giá.</p>
+                    <p><strong>Vị trí thực hiện:</strong> Backend (C#)</p>
+                    <p><strong>Công nghệ:</strong> ASP.NET Core Web API</p>
+                    <a href="https://github.com/Long965/NHOM_CNPM" class="github-link"><i class="fas fa-link"></i> Xem
+                        trên GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="./image/Portfolio.png" alt="Personal Portfolio">
+                </div>
+                <div class="project-overlay">
+                    <h3>Personal Portfolio</h3>
+                    <p>Thiết kế giao diện portfolio hiện đại, phên bố cá nhân, kỹ năng và dự án. Responsive toàn bộ,
+                        hoàt động trên desktop và mobile.</p>
+                    <p><strong>Vị trí thực hiện:</strong> Frontend</p>
+                    <p><strong>Công nghệ:</strong> HTML, CSS, JavaScript</p>
+                    <a href="https://haoln25.github.io/DigitalCV/" class="github-link"><i class="fas fa-link"></i> Xem
+                        trên GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Liên hệ -->
+    <section id="contact" class="fade-in-up contact">
+        <h2 class="">Liên Hệ</h2>
+        <div class="contact-info">
+            <h3 style="color: #646cba; margin-bottom: 2rem;">Thông tin liên hệ</h3>
+
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <strong>Email:</strong><br>
+                    <a href="mailto:lenhathao01018@gmail.com" class="contact-link">lenhathao010181@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                    <strong>Điện thoại:</strong><br>
+                    <a href="tel:+84888553945" class="contact-link">0888553945</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <strong>Địa chỉ:</strong><br>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        125/9/6, Nguyễn Thị Nhuần, P. An Phú Đông, Quận 12, TP. Hồ Chí Minh
+                    </a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/haoln25" target="_blank" rel="noopener noreferrer"
+                    class="social-link social-link-github" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/nhathao.25/" target="_blank" rel="noopener noreferrer"
+                    class="social-link social-link-facebook" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="section">
-        <h2>Dự án</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Portfolio cá nhân</h3>
-                <p>Trang CV cá nhân có responsive, hiệu ứng cuộn, chia section rõ ràng.</p>
-            </div>
-            <div class="card">
-                <h3>Website bán hoa</h3>
-                <p>Dự án website bán hàng có giỏ hàng, tìm kiếm và đặt hàng giả lập.</p>
-            </div>
+    <footer class="fade-in-up">
+        <div class="container">
+            <p>&copy; 2025 Nhật Hào - Mã nguồn cuộc sống, kiến tạo tương lai số❤️</p>
         </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Liên hệ</h2>
-        <div class="grid">
-            <div class="card">
-                <p>Email: lenhathao010181@gmail.com</p>
-                <p>Facebook: </p>
-                <p>GitHub: github.com/nhathao</p>
-            </div>
-        </div>
-    </section>
+    </footer>
 </body>
+<script class="" src="./js/animation.js"></script>
+
 
 </html>
