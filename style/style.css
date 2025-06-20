@@ -33,6 +33,15 @@ header h1 {
     font-size: 24px;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -147,8 +156,12 @@ nav ul li a.active {
 
 
 section {
-    height: 650px;
+    min-height: 650px;
+    height: auto;
+    overflow: visible;
+
 }
+
 
 .about-section {
     padding: 80px 20px;
@@ -174,7 +187,10 @@ section {
     justify-content: space-between;
     gap: 70px;
     flex-wrap: wrap;
+    overflow: visible;
+
 }
+
 
 .avt-img {
     flex: 1;
@@ -201,6 +217,8 @@ section {
     padding: 50px 30px;
     text-align: center;
     border-radius: 12px;
+    overflow: visible;
+
 }
 
 .hobby-hover h2 {
@@ -220,6 +238,7 @@ section {
 .hobby-item {
     position: relative;
     text-align: center;
+    overflow: visible;
 }
 
 .hobby-tab:hover {
@@ -231,15 +250,16 @@ section {
 .hobby-box {
     display: none;
     position: absolute;
-    top: 110%;
+    top: calc(100% + 10px);
     left: 50%;
     transform: translateX(-50%);
     padding: 20px;
     border-radius: 12px;
     min-width: 200px;
-    z-index: 10;
     background-color: #fff;
     text-align: left;
+    z-index: 1001;
+    /* cao hơn header */
 }
 
 .hobby-box h4 {
@@ -251,6 +271,7 @@ section {
     list-style: none;
     padding: 0;
     margin: 0;
+
 }
 
 .hobby-box ul li {

@@ -1,0 +1,113 @@
+/* ==== Responsive Layout for Mobile Devices ==== */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 50px;
+        background-color: #083c24;
+        color: white;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .menu-toggle {
+        font-size: 28px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        display: none;
+        /* Ẩn mặc định */
+        flex-direction: column;
+        background-color: #083c24;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        /* Hiện khi toggle */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        /* Các mục hiển thị theo cột */
+        align-items: flex-start;
+        /* Căn trái */
+        gap: 20px;
+        /* Khoảng cách giữa các mục */
+        padding: 20px;
+        margin: 0;
+        list-style: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: left;
+        padding: 10px 20px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        padding: 40px 20px;
+        height: auto;
+        text-align: center;
+    }
+
+    .home-img img {
+        width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .about-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .avt-img img {
+        width: 200px;
+    }
+
+    .hobby-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-section {
+        padding: 40px 20px;
+    }
+
+    .skill-category {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    .contact-info {
+        width: 90%;
+    }
+
+    section {
+        height: auto;
+        padding: 80px 20px;
+    }
+}

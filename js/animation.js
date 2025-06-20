@@ -52,26 +52,46 @@ const observer = new IntersectionObserver((entries, obs) => {
 
 faders.forEach(el => observer.observe(el));
 /*Ky nang*/
-document.addEventListener("DOMContentLoaded", function () {
-    const bars = document.querySelectorAll(".skill-bar");
+function animateSkillBars() {
+    const fills = document.querySelectorAll('.skill-fill');
 
-    bars.forEach((bar) => {
-        const fill = bar.querySelector(".skill-fill");
-        const percent = bar.querySelector(".skill-percent");
-        const value = parseInt(fill.style.getPropertyValue("--skill-percent"));
+    fills.forEach(fill => {
+        const percentStr = fill.getAttribute('data-percent');
+        const percent = parseInt(percentStr);
+        const span = fill.nextElementSibling;
 
-        let current = 0;
-        const duration = 2000; // 2s
-        const interval = 10; // ms
-        const step = (value * interval) / duration;
+        // Reset về 0%
+        fill.style.transition = 'none'; // bỏ transition tạm thời
+        fill.style.width = '0%';
+        span.textContent = '0%';
 
-        const counter = setInterval(() => {
-            current += step;
-            if (current >= value) {
-                current = value;
-                clearInterval(counter);
-            }
-            percent.textContent = Math.round(current) + "%";
-        }, interval);
+        // Kích hoạt reflow để đảm bảo trình duyệt nhận thay đổi
+        void fill.offsetWidth;
+
+        // Thêm transition trở lại
+        fill.style.transition = 'width 2s ease';
+
+        // Sau 300ms, animate lên lại
+        setTimeout(() => {
+            fill.style.width = percentStr;
+
+            // Đếm phần trăm từ 0 lên đến đúng số
+            let count = 0;
+            const interval = setInterval(() => {
+                if (count >= percent) {
+                    clearInterval(interval);
+                    span.textContent = percentStr;
+                } else {
+                    count++;
+                    span.textContent = count + '%';
+                }
+            }, 20);
+        }, 300); // delay nhỏ cho hiệu ứng mượt
     });
-});
+}
+
+// Chạy ban đầu
+animateSkillBars();
+
+// Chạy lại sau mỗi 30s
+setInterval(animateSkillBars, 5000);
